@@ -1,0 +1,17 @@
+﻿{
+  "name": "Binnews Enhancer",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Extension permettant d'ajouter un lien de téléchargement sur Binsearch.com",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+
+  "content_scripts": [{
+    "matches": ["http://www.binnews.in/*"],
+    "js": ["jquery-1.7.2.js", "popup.js"],
+    "run_at": "document_start",
+	"all_frames": true
+  }]
+}
