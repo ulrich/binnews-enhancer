@@ -1,6 +1,6 @@
 ﻿{
   "name": "Binnews Enhancer",
-  "version": "1.1",
+  "version": "1.2",
   "manifest_version": 2,
   "description": "Extension permettant d'ajouter un lien de téléchargement sur Binsearch.com",
 
@@ -15,3 +15,4 @@
 	"all_frames": true
   }]
 }
+
