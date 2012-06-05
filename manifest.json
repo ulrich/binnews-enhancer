@@ -1,18 +1,34 @@
 ﻿{
   "name": "Binnews Enhancer",
-  "version": "1.2",
+  "version": "1.3",
   "manifest_version": 2,
-  "description": "Extension permettant d'ajouter un lien de téléchargement sur Binsearch.com",
+  "description": "Extension permettant d'ajouter un lien de téléchargement sur Binsearch.com, Yabsearch.com et Yubse.com",
 
   "browser_action": {
     "default_icon": "icon.png"
   },
 
+  "web_accessible_resources": [
+	"jquerybubblepopup-themes/azure/bottom-left.png",
+	"jquerybubblepopup-themes/azure/bottom-middle.png",
+	"jquerybubblepopup-themes/azure/bottom-right.png",
+	"jquerybubblepopup-themes/azure/top-left.png",
+	"jquerybubblepopup-themes/azure/top-middle.png",
+	"jquerybubblepopup-themes/azure/top-right.png",
+	"jquerybubblepopup-themes/azure/middle-left.png",
+	"jquerybubblepopup-themes/azure/middle-right.png",
+	"jquerybubblepopup-themes/azure/tail-bottom.png",
+	"ampoule.png",
+	"yabsearch.png",
+	"binsearch.png",
+	"yubse.png"
+  ],
+
   "content_scripts": [{
     "matches": ["http://www.binnews.in/*"],
-    "js": ["jquery-1.7.2.js", "popup.js"],
+    "js": ["jquery-1.7.2.js", "jquerybubblepopup-themes/jquery-bubble-popup-v3.min.js", "popup.js"],
+    "css": ["jquerybubblepopup-themes/jquery-bubble-popup-v3.css"],
     "run_at": "document_start",
 	"all_frames": true
   }]
 }
-
