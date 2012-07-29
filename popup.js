@@ -1,13 +1,19 @@
 // Copyright (c) 2012 Ulrich VACHON. All rights reserved.
-// Extension permettant d'ajouter un lien de téléchargement sur Binsearch.com
+// Extension permettant d'ajouter un lien de téléchargement pointant sur les moteurs générateurs de fichier NZB.
 
+/**
+ * Code en attente de refactoring un peu hacké afin de permettre l'utilisation du plugin pour la nouvelle version du site.
+ */
 $(document).ready(function () {
    var NOM_TH_FICHIER = "Fichier";
 
+   var NOM_TABLE_V1 = "tabliste";
+
+   var NOM_TABLE_V2 = "table_results";
+
    var baseURL = chrome.extension.getURL('./');
 
-   // cherche l'index de la colonne qui contient le fichier
-   var indexThFichier = $("table#table_results tr th:contains('" + NOM_TH_FICHIER + "')").index() + 1;
+   var indexThFichier = getPositionDeLaColonneRecherchee();
 
    // ajoute le lien dans le td de la colonne "Fichier"
    $("tr td:nth-child(" + indexThFichier + ")").each(function () {
@@ -52,5 +58,15 @@ $(document).ready(function () {
    // retourne le lien pour Yubse
    function getYubseLink(titre) {
       return '<form style="display:inline;" action="http://www.yubse.com/?" method="get" target="_blank"><input type="hidden" name="q" value="' + titre + '"><a onClick="$(this).parent().submit();" class="c16" href="#"><img title="Yubse.com" width="16" height="16" src="' + baseURL + 'yubse.png"/></a></form>';
+   }
+
+   // cherche l'index de la colonne qui contient le fichier avec un fallback causé pour la nouvelle version du site
+   function getPositionDeLaColonneRecherchee() {
+      var indexThFichier = $("table#" + NOM_TABLE_V1 + " tr th:contains('" + NOM_TH_FICHIER + "')").index() + 1;
+
+      if (indexThFichier == 0) {
+         indexThFichier = $("table#" + NOM_TABLE_V2 + " tr th:contains('" + NOM_TH_FICHIER + "')").index() + 1;
+      }
+      return indexThFichier;
    }
 });

@@ -1,8 +1,8 @@
 ﻿{
   "name": "Binnews Enhancer",
-  "version": "1.4",
+  "version": "1.4.1",
   "manifest_version": 2,
-  "description": "Extension permettant d'ajouter un lien de téléchargement sur Binsearch.com, Yabsearch.com et Yubse.com",
+  "description": "Extension permettant d'ajouter un lien de téléchargement pointant sur les moteurs générateurs de fichier NZB.",
 
   "browser_action": {
     "default_icon": "icon.png"
