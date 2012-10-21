@@ -1,6 +1,6 @@
 ﻿{
   "name": "Binnews Enhancer",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "manifest_version": 2,
   "description": "Extension permettant d'ajouter un lien de téléchargement pointant sur les moteurs générateurs de fichier NZB.",
 
@@ -21,7 +21,10 @@
 	"ampoule.png",
 	"yabsearch.png",
 	"binsearch.png",
-	"yubse.png"
+	"yubse.png",
+  "mysterbin.png",
+  "nzbindex.png",
+  "nzbclub.png"
   ],
 
   "content_scripts": [{

@@ -35,7 +35,7 @@ $(document).ready(function () {
       var titre = $(this).data('nom');
 
       $(this).CreateBubblePopup({
-         innerHtml:getBinsearchLink('' + titre + '') + '&nbsp;' + getYabsearchLink('' + titre + '') + '&nbsp;' + getYubseLink('' + titre + ''),
+         innerHtml:getBinsearchLink('' + titre + '') + '&nbsp;' + getYabsearchLink('' + titre + '') + '&nbsp;' + getYubseLink('' + titre + '') + '&nbsp;' + getMisterbinLink('' + titre + '') + '&nbsp;' + getNZBIndexLink('' + titre + '') + '&nbsp;' + getNZBClubLink('' + titre + ''),
          themePath:baseURL + 'jquerybubblepopup-themes',
          position:'top',
          selectable:true
@@ -58,6 +58,21 @@ $(document).ready(function () {
    // retourne le lien pour Yubse
    function getYubseLink(titre) {
       return '<form style="display:inline;" action="http://www.yubse.com/?" method="get" target="_blank"><input type="hidden" name="q" value="' + titre + '"><a onClick="$(this).parent().submit();" class="c16" href="#"><img title="Yubse.com" width="16" height="16" src="' + baseURL + 'yubse.png"/></a></form>';
+   }
+
+   // retourne le lien pour Misterbin
+   function getMisterbinLink(titre) {
+      return '<form style="display:inline;" action="http://www.mysterbin.com/search?" method="get" target="_blank"><input type="hidden" name="q" value="' + titre + '"><a onClick="$(this).parent().submit();" class="c16" href="#"><img title="Misterbin.com" width="16" height="16" src="' + baseURL + 'mysterbin.png"/></a></form>';
+   }
+
+   // retourne le lien pour NZBIndex
+   function getNZBIndexLink(titre) {
+      return '<form style="display:inline;" action="http://www.nzbindex.nl/search/?" method="get" target="_blank"><input type="hidden" name="q" value="' + titre + '"><a onClick="$(this).parent().submit();" class="c16" href="#"><img title="NZBIndex.com" width="16" height="16" src="' + baseURL + 'nzbindex.png"/></a></form>';
+   }
+
+   // retourne le lien pour NZBClub
+   function getNZBClubLink(titre) {
+      return '<form style="display:inline;" action="http://nzbclub.com/search.aspx?" method="get" target="_blank"><input type="hidden" name="q" value="' + titre + '"><a onClick="$(this).parent().submit();" class="c16" href="#"><img title="NZBClub.com" width="16" height="16" src="' + baseURL + 'nzbclub.png"/></a></form>';
    }
 
    // cherche l'index de la colonne qui contient le fichier avec un fallback causé pour la nouvelle version du site
