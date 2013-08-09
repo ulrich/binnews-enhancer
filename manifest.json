@@ -1,6 +1,6 @@
 ﻿{
   "name": "Binnews Enhancer",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "manifest_version": 2,
   "description": "Extension permettant d'ajouter un lien de téléchargement pointant sur les moteurs générateurs de fichier NZB.",
 
@@ -28,7 +28,7 @@
   ],
 
   "content_scripts": [{
-    "matches": ["http://*.binnews.in/*"],
+    "matches": ["http://*.binnews.in/*", "https://*.binnews.in/*"],
     "js": ["jquery-1.7.2.js", "jquerybubblepopup-themes/jquery-bubble-popup-v3.min.js", "popup.js"],
     "css": ["jquerybubblepopup-themes/jquery-bubble-popup-v3.css"],
     "run_at": "document_start",

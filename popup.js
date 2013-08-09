@@ -35,7 +35,7 @@ $(document).ready(function () {
       var titre = $(this).data('nom');
 
       $(this).CreateBubblePopup({
-         innerHtml:getBinsearchLink('' + titre + '') + '&nbsp;' + getYabsearchLink('' + titre + '') + '&nbsp;' + getYubseLink('' + titre + '') + '&nbsp;' + getMisterbinLink('' + titre + '') + '&nbsp;' + getNZBIndexLink('' + titre + '') + '&nbsp;' + getNZBClubLink('' + titre + ''),
+         innerHtml:getBinsearchLink('' + titre + '') + '&nbsp;' + getYabsearchLink('' + titre + '') + '&nbsp;' + getYubseLink('' + titre + '') + '&nbsp;' + getNZBIndexLink('' + titre + '') + '&nbsp;' + getNZBClubLink('' + titre + ''),
          themePath:baseURL + 'jquerybubblepopup-themes',
          position:'top',
          selectable:true
@@ -58,11 +58,6 @@ $(document).ready(function () {
    // retourne le lien pour Yubse
    function getYubseLink(titre) {
       return '<form style="display:inline;" action="http://www.yubse.com/?" method="get" target="_blank"><input type="hidden" name="q" value="' + titre + '"><a onClick="$(this).parent().submit();" class="c16" ><img title="Yubse.com" width="16" height="16" src="' + baseURL + 'yubse.png"/></a></form>';
-   }
-
-   // retourne le lien pour Misterbin
-   function getMisterbinLink(titre) {
-      return '<form style="display:inline;" action="http://www.mysterbin.com/search?" method="get" target="_blank"><input type="hidden" name="q" value="' + titre + '"><a onClick="$(this).parent().submit();" class="c16" ><img title="Misterbin.com" width="16" height="16" src="' + baseURL + 'mysterbin.png"/></a></form>';
    }
 
    // retourne le lien pour NZBIndex
